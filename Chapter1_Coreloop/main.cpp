@@ -1,6 +1,8 @@
-#include <iostream>
-using namespace std;
+#include "GameManager.h"
 
-int main() {
+int main()
+{
+    GameManager gameManager;
+    gameManager.runSession();
     return 0;
 }
