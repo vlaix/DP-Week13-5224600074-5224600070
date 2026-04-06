@@ -7,6 +7,7 @@ void GameManager::runSession(){
     handPlayer.playHand();
     int score = scoringRule.scoreHand();
     bool win = blindRule.checkBlind(score);
+    
     int reward = rewardRule.earnMoney(win, score);
     std::cout << "Money gained: " << reward << "\n";
     std::cout << "=== Run Ended ===\n";
