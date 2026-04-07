@@ -1,15 +1,15 @@
 #include <iostream>
-#include "PairChecker.h"
+#include "TwoPairChecker.h"
 
 // dummy helper
-bool isPair(const Hand& hand){
-return hand.value == 2;
+bool isTwoPair(const Hand& hand){
+return hand.value == 3;
 }
 
-HandRank PairChecker::check(const Hand& hand){
-    if (isPair(hand)){
-        std::cout << "Detected PAIR\n";
-        return HandRank::PAIR;
+HandRank TwoPairChecker::check(const Hand& hand){
+    if (isTwoPair(hand)){
+        std::cout << "Detected TWO PAIR\n";
+        return HandRank::TWO_PAIR;
     }
     if (nextChecker)
         return nextChecker->check(hand);

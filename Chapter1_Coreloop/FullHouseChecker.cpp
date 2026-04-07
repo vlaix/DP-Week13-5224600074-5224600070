@@ -2,12 +2,12 @@
 #include "FullHouseChecker.h"
 
 // dummy helper
-bool isFlush(const Hand& hand){
+bool isFullHouse(const Hand& hand){
 return hand.value == 7;
 }
 
 HandRank FullHouseChecker::check(const Hand& hand){
-    if (isFlush(hand)){
+    if (isFullHouse(hand)){
         std::cout << "Detected FULL HOUSE\n";
         return HandRank::FULL_HOUSE;
     }

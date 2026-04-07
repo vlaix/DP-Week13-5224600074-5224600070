@@ -1,17 +1,18 @@
 #include <iostream>
-#include "PairChecker.h"
+#include "ThreeOfKindChecker.h"
 
 // dummy helper
-bool isPair(const Hand& hand){
-return hand.value == 2;
+bool isThreeOfKind(const Hand& hand){
+return hand.value == 4;
 }
 
-HandRank PairChecker::check(const Hand& hand){
-    if (isPair(hand)){
-        std::cout << "Detected PAIR\n";
-        return HandRank::PAIR;
+HandRank ThreeOfKindChecker::check(const Hand& hand){
+    if (isThreeOfKind(hand)){
+        std::cout << "Detected THREE OF A KIND\n";
+        return HandRank::THREE_OF_A_KIND;
     }
     if (nextChecker)
         return nextChecker->check(hand);
-    return HandRank::HIGH_CARD;
+    
+        return HandRank::HIGH_CARD;
 }
