@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Danu\repo\Balatro-\Chapter1_Coreloop\build\CMakeFiles\f6679830684e499f5725358836c119ab\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8CAED352-71B8-3EF7-9E84-722CF639FA0B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

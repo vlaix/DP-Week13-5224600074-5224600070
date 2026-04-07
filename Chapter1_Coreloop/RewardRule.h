@@ -1,6 +1,6 @@
 #pragma once
-class RewardRule
-{
+
+class RewardRule {
 public:
-int earnMoney(bool win, int score);
+    int earnMoney(bool win, int score);
 };

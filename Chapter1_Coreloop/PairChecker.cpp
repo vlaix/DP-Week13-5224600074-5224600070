@@ -13,5 +13,6 @@ HandRank PairChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
+        
     return HandRank::HIGH_CARD;
 }

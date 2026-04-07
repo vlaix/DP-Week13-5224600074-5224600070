@@ -1,0 +1,10 @@
+^C:\DANU\REPO\BALATRO-\CHAPTER1_CORELOOP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Danu/repo/Balatro-/Chapter1_Coreloop -BC:/Danu/repo/Balatro-/Chapter1_Coreloop/build --check-stamp-file C:/Danu/repo/Balatro-/Chapter1_Coreloop/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
