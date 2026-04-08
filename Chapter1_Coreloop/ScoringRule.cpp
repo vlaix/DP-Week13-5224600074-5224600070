@@ -2,8 +2,17 @@
 #include "ScoringRule.h"
 
 ScoringRule::ScoringRule(){
+    flushfivechecker.setNext(&flushhousechecker);
+    flushhousechecker.setNext(&fiveofakindchecker);
+    fiveofakindchecker.setNext(&royalflushchecker);
+    royalflushchecker.setNext(&straightflushchecker);
+    straightflushchecker.setNext(&fourofakindchecker);
+    fourofakindchecker.setNext(&fullhousechecker);
     fullhousechecker.setNext(&flushchecker);
-    flushchecker.setNext(&pairchecker);
+    flushchecker.setNext(&straightchecker);
+    straightchecker.setNext(&threeofakindchecker);
+    threeofakindchecker.setNext(&twopairchecker);
+    twopairchecker.setNext(&pairchecker);
     }
 
     int ScoringRule::scoreHand(const Hand& hand){
