@@ -17,7 +17,7 @@ ScoringRule::ScoringRule(){
 
     int ScoringRule::scoreHand(const Hand& hand){
         std::cout << "Calculating hand score...\n";
-        HandRank rank = fullhousechecker.check(hand);
+        HandRank rank = flushfivechecker.check(hand);
         int score = convertRankToScore(rank);
         std::cout << "Final score = " << score << "\n";
         return score;
