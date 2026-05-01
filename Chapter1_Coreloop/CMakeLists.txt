@@ -1,10 +1,30 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(BalatroScoringSystem)
+project(Balator)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB ALL_SOURCES "*.cpp")
+add_executable(CHAPTER1_CORELOOP
+    main.cpp
 
-add_executable(MainApp ${ALL_SOURCES})
+    BlindRule.cpp
+    FiveOfAKindChecker.cpp
+    FlushChecker.cpp
+    FlushFiveChecker.cpp
+    FlushHouseChecker.cpp
+    FourOfAKindChecker.cpp
+    FullHouseChecker.cpp
+    GameManager.cpp
+    HandGenerator.cpp
+    HandPlayer.cpp
+    PairChecker.cpp
+    PokerHandChecker.cpp
+    RewardRule.cpp
+    RoyalFlushChecker.cpp
+    ScoringRule.cpp
+    StraightChecker.cpp
+    StraightFlushChecker.cpp
+    ThreeOfKindChecker.cpp
+    TwoPairChecker.cpp
+)

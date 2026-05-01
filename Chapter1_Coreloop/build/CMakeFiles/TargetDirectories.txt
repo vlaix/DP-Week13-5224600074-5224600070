@@ -1,3 +1,0 @@
-C:/Danu/repo/Balatro-/Chapter1_Coreloop/build/CMakeFiles/MainApp.dir
-C:/Danu/repo/Balatro-/Chapter1_Coreloop/build/CMakeFiles/ALL_BUILD.dir
-C:/Danu/repo/Balatro-/Chapter1_Coreloop/build/CMakeFiles/ZERO_CHECK.dir
