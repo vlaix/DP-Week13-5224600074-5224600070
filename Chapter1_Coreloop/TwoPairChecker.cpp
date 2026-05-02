@@ -1,9 +1,21 @@
 #include <iostream>
+#include <map>
 #include "TwoPairChecker.h"
+#include "PokerHelper.h"
 
-// dummy helper
 bool isTwoPair(const Hand& hand){
-return hand.value == 3;
+    auto count = getRankCount(hand);
+
+    int pairCount = 0;
+
+    for(const auto& pair : count)
+    {
+        if(pair.second == 2)
+        {
+            pairCount++;
+        }
+    }
+    return pairCount == 2;
 }
 
 HandRank TwoPairChecker::check(const Hand& hand){
@@ -13,6 +25,4 @@ HandRank TwoPairChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
-        
-    return HandRank::HIGH_CARD;
 }

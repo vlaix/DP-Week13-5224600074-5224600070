@@ -3,7 +3,18 @@
 
 // dummy helper
 bool isFlush(const Hand& hand){
-return hand.value == 6;
+    
+    char suit = hand.cards[0].suit;
+
+    for(const Card& card : hand.cards)
+    {
+        if(card.suit != suit)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 HandRank FlushChecker::check(const Hand& hand){

@@ -1,9 +1,22 @@
 #include <iostream>
+#include <map>
 #include "PairChecker.h"
+#include "PokerHelper.h"
 
-// dummy helper
-bool isPair(const Hand& hand){
-return hand.value == 2;
+bool isPair(const Hand& hand)
+{
+    auto count = getRankCount(hand);
+
+    int pairCount = 0;
+
+    for(const auto& pair : count)
+    {
+        if(pair.second == 2)
+        {
+            pairCount++;
+        }
+    }
+    return pairCount == 1;
 }
 
 HandRank PairChecker::check(const Hand& hand){
