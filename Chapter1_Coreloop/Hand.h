@@ -5,5 +5,4 @@
 struct Hand
 {
     std::vector<Card> cards;
-    int value;
 };
