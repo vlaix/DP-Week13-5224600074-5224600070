@@ -1,7 +1,9 @@
 #include <iostream>
 #include "HandPlayer.h"
 
-void HandPlayer::playHand(Hand hand)
+Hand HandPlayer::playHand(Hand hand)
 {
+    ChosenHand chooser;
     std::cout << "Player selects cards to play...\n";
+    return chooser.chooseCards(hand);
 }   

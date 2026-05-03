@@ -30,16 +30,16 @@ Hand ChosenHand::chooseCards(const Hand& hand){
     }
 
     std::cout << "===Kartu dipilih===\n";
-    for (auto& card : result.cards){
+    for (int i = 0; i < 5; i++){
         std::string rankStr;
-        switch(card.rank){
+        switch(result.cards[i].rank){
             case 11: rankStr = "J"; break;
             case 12: rankStr = "Q"; break;
             case 13: rankStr = "K"; break;
             case 14: rankStr = "A"; break;
-            default: rankStr = std::to_string(card.rank); break;
+            default: rankStr = std::to_string(result.cards[i].rank); break;
         }
-        std::cout << card.suit << " " << rankStr << "\n";
+        std::cout << i+1 << ". "<< result.cards[i].suit << " " << rankStr << "\n";
     }
 
     return result;

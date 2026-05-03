@@ -1,7 +1,8 @@
 #pragma once
 #include "Hand.h"
+#include "ChosenHand.h"
 
 class HandPlayer {
 public:
-    void playHand(Hand hand);
+    Hand playHand(Hand hand);
 };
