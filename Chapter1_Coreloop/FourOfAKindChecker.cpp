@@ -1,6 +1,7 @@
 #include <iostream>
 #include "PokerHelper.h"
 #include "FourOfAKindChecker.h"
+#include "PokerHelper.h"
 
 HandRank FourOfAKindChecker::check(const Hand& hand){
     if (DuplicateChecker(hand, 4)){
@@ -9,6 +10,5 @@ HandRank FourOfAKindChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
-
     return HandRank::HIGH_CARD;
 }

@@ -2,7 +2,6 @@
 #include "PokerHelper.h"
 #include "RoyalFlushChecker.h"
 
-// dummy helper
 bool isRoyalFlush(const Hand& hand){
     if(!isFlush(hand) || !isStraight(hand))
     {
@@ -21,13 +20,14 @@ bool isRoyalFlush(const Hand& hand){
     return ranks[0] == 10;
 }
 
-HandRank RoyalFlushChecker::check(const Hand& hand){
-    if (isRoyalFlush(hand)){
+HandRank RoyalFlushChecker::check(const Hand& hand)
+{
+    if(isRoyalFlush(hand))
+    {
         std::cout << "Detected ROYAL FLUSH\n";
         return HandRank::ROYAL_FLUSH;
     }
-    if (nextChecker)
+    if(nextChecker)
         return nextChecker->check(hand);
-
     return HandRank::HIGH_CARD;
 }

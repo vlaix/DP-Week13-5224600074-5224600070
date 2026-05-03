@@ -1,6 +1,7 @@
 #include <iostream>
 #include "PokerHelper.h"
 #include "FullHouseChecker.h"
+#include "PokerHelper.h"
 
 HandRank FullHouseChecker::check(const Hand& hand){
     if (DuplicateChecker(hand, 3) && DuplicateChecker(hand, 2)){
@@ -9,6 +10,5 @@ HandRank FullHouseChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
-        
     return HandRank::HIGH_CARD;
 }

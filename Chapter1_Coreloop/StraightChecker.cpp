@@ -7,8 +7,7 @@ HandRank StraightChecker::check(const Hand& hand){
         std::cout << "Detected STRAIGHT\n";
         return HandRank::STRAIGHT;
     }
-    if (nextChecker)
+    if(nextChecker)
         return nextChecker->check(hand);
-        
     return HandRank::HIGH_CARD;
 }
