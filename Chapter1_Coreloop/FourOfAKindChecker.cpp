@@ -1,9 +1,13 @@
 #include <iostream>
 #include "FourOfAKindChecker.h"
+#include "PokerHelper.h"
 
-// dummy helper
 bool isFourOfAKind(const Hand& hand){
-    return hand.value == 8;
+    auto count = getRankCount(hand);
+
+    for(const auto& pair : count)
+        if(pair.second == 4) return true;
+    return false;
 }
 
 HandRank FourOfAKindChecker::check(const Hand& hand){
@@ -13,6 +17,5 @@ HandRank FourOfAKindChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
-
     return HandRank::HIGH_CARD;
 }

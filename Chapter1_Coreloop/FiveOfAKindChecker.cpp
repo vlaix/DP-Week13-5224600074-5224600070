@@ -1,9 +1,13 @@
 #include <iostream>
 #include "FiveOfAKindChecker.h"
+#include "PokerHelper.h"
 
-// dummy helper
 bool isFiveOfAKind(const Hand& hand){
-    return hand.value == 11;
+    auto count = getRankCount(hand);
+
+    for(const auto& pair : count)
+        if(pair.second == 5) return true;
+    return false;
 }
 
 HandRank FiveOfAKindChecker::check(const Hand& hand){
@@ -13,6 +17,5 @@ HandRank FiveOfAKindChecker::check(const Hand& hand){
     }
     if (nextChecker)
         return nextChecker->check(hand);
-
     return HandRank::HIGH_CARD;
 }

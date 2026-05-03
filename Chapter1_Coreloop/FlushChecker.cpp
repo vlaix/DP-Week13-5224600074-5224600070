@@ -1,12 +1,11 @@
 #include <iostream>
 #include "FlushChecker.h"
 
-// dummy helper
 bool isFlush(const Hand& hand){
     
     char suit = hand.cards[0].suit;
 
-    for(const Card& card : hand.cards)
+    for(const auto& card : hand.cards)
     {
         if(card.suit != suit)
         {
