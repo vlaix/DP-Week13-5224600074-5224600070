@@ -1,13 +1,9 @@
 #include <iostream>
+#include "PokerHelper.h"
 #include "FlushFiveChecker.h"
 
-// dummy helper
-bool isFlushFive(const Hand& hand){
-    return hand.value == 13;
-}
-
 HandRank FlushFiveChecker::check(const Hand& hand){
-    if (isFlushFive(hand)){
+    if (isFlush(hand) && DuplicateChecker(hand, 5)){
         std::cout << "Detected FLUSH FIVE\n";
         return HandRank::FLUSH_FIVE;
     }

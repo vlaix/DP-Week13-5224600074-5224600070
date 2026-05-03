@@ -1,13 +1,9 @@
 #include <iostream>
+#include "PokerHelper.h"
 #include "FullHouseChecker.h"
 
-// dummy helper
-bool isFullHouse(const Hand& hand){
-return hand.value == 7;
-}
-
 HandRank FullHouseChecker::check(const Hand& hand){
-    if (isFullHouse(hand)){
+    if (DuplicateChecker(hand, 3) && DuplicateChecker(hand, 2)){
         std::cout << "Detected FULL HOUSE\n";
         return HandRank::FULL_HOUSE;
     }

@@ -15,6 +15,7 @@ bool isTwoPair(const Hand& hand){
             pairCount++;
         }
     }
+
     return pairCount == 2;
 }
 

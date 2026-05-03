@@ -1,9 +1,11 @@
 #include <iostream>
+#include "PokerHelper.h"
 #include "StraightFlushChecker.h"
 
-// dummy helper
+
 bool isStraightFlush(const Hand& hand){
-    return hand.value == 9;
+
+    return isFlush(hand)&&isStraight(hand);
 }
 
 HandRank StraightFlushChecker::check(const Hand& hand){

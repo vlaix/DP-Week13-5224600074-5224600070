@@ -3,24 +3,8 @@
 #include "PairChecker.h"
 #include "PokerHelper.h"
 
-bool isPair(const Hand& hand)
-{
-    auto count = getRankCount(hand);
-
-    int pairCount = 0;
-
-    for(const auto& pair : count)
-    {
-        if(pair.second == 2)
-        {
-            pairCount++;
-        }
-    }
-    return pairCount == 1;
-}
-
 HandRank PairChecker::check(const Hand& hand){
-    if (isPair(hand)){
+    if (DuplicateChecker(hand, 2)){
         std::cout << "Detected PAIR\n";
         return HandRank::PAIR;
     }

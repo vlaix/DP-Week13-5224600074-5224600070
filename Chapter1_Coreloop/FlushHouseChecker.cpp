@@ -1,13 +1,9 @@
 #include <iostream>
+#include "PokerHelper.h"
 #include "FlushHouseChecker.h"
 
-// dummy helper
-bool isFlushHouse(const Hand& hand){
-    return hand.value == 12;
-}
-
 HandRank FlushHouseChecker::check(const Hand& hand){
-    if (isFlushHouse(hand)){
+    if (DuplicateChecker(hand, 3) && DuplicateChecker(hand, 2) && isFlush(hand)){
         std::cout << "Detected FLUSH HOUSE\n";
         return HandRank::FLUSH_HOUSE;
     }

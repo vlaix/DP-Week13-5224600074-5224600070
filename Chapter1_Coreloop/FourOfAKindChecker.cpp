@@ -1,13 +1,9 @@
 #include <iostream>
+#include "PokerHelper.h"
 #include "FourOfAKindChecker.h"
 
-// dummy helper
-bool isFourOfAKind(const Hand& hand){
-    return hand.value == 8;
-}
-
 HandRank FourOfAKindChecker::check(const Hand& hand){
-    if (isFourOfAKind(hand)){
+    if (DuplicateChecker(hand, 4)){
         std::cout << "Detected FOUR OF A KIND\n";
         return HandRank::FOUR_OF_A_KIND;
     }
