@@ -4,15 +4,20 @@
 #include "ScoringRule.h"
 #include "BlindRule.h"
 #include "RewardRule.h"
+#include "JokerManager.h"
+#include "FlatChipJoker.h"
+#include "PairJoker.h"
 
-class GameManager{
+class GameManager {
 public:
+    GameManager();
     void runSession();
-    
+
 private:
     HandGenerator handGenerator;
-    HandPlayer handPlayer;
-    ScoringRule scoringRule;
-    BlindRule blindRule;
-    RewardRule rewardRule;
+    HandPlayer    handPlayer;
+    ScoringRule   scoringRule;
+    BlindRule     blindRule;
+    RewardRule    rewardRule;
+    JokerManager  jokerManager;
 };
