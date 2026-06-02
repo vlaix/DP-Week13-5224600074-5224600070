@@ -4,5 +4,5 @@
 
 class HandPlayer {
 public:
-    Hand playHand(Hand hand);
+    Hand playHand(Hand& playerHand);
 };

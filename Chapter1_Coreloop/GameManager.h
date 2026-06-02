@@ -1,27 +1,28 @@
 #pragma once
+#include "GameSession.h"
 #include "HandGenerator.h"
 #include "HandPlayer.h"
 #include "ScoringRule.h"
-#include "BlindRule.h"
-#include "RewardRule.h"
 #include "JokerManager.h"
-#include "FlatChipJoker.h"
-#include "PairJoker.h"
-#include "GameSession.h"
-#include "BlindState.h"
-
-class GameSession;
+#include "BlindRule.h"
 
 class GameManager {
-public:
-    GameManager();
-    void runSession(GameSession& session);
-
 private:
     HandGenerator handGenerator;
-    HandPlayer    handPlayer;
-    ScoringRule   scoringRule;
-    BlindRule     blindRule;
-    RewardRule    rewardRule;
-    JokerManager  jokerManager;
+    HandPlayer handPlayer;
+    ScoringRule scoringRule;
+    JokerManager jokerManager;
+    BlindRule blindRule;
+
+    // Fungsi internal (pribadi) untuk memproses alur gameplay
+    void runSession(GameSession& gameSession);
+    void skipBlind(GameSession& gameSession);
+    void handleDiscard(GameSession& gameSession, Hand& currentHand);
+    void triggerRewards(GameSession& gameSession, RewardTiming currentTiming);
+
+public:
+    GameManager() = default;
+    
+    // Fungsi utama yang dipanggil dari main.cpp
+    void startGameLoop(GameSession& session); 
 };

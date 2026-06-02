@@ -3,19 +3,12 @@
 #include "GameSession.h"
 #include "ConcreteBlinds.h"
 
-int main()
-{
-    int buffer;
-    GameManager gameManager;
+int main() {
+    GameManager manager;
+    
+    GameSession session(std::make_shared<SmallBlindState>());
+    
+    manager.startGameLoop(session); 
 
-    auto initialState = std::make_shared<SmallBlindState>();
-
-    GameSession gameSession(initialState);
-
-    gameManager.runSession(gameSession);
-
-    gameManager.runSession(gameSession);
-
-    std::cin >> buffer;
     return 0;
 }

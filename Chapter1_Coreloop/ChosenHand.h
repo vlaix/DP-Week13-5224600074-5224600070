@@ -3,5 +3,5 @@
 
 class ChosenHand {
 public:
-    Hand chooseCards(const Hand& hand);
+    Hand chooseCards(Hand& hand); 
 };

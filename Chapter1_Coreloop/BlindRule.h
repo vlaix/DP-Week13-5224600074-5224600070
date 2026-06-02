@@ -1,7 +1,10 @@
 #pragma once
+class GameSession;
 
-class BlindRule
-{
+class BlindRule {
 public:
-    bool checkBlind(int score);
+    BlindRule() = default;
+    
+    // Mengembalikan true jika skor memenuhi target Blind saat ini
+    bool checkBlind(int currentRoundScore, const GameSession& gameSession);
 };
