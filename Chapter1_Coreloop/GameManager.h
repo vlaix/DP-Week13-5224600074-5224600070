@@ -7,11 +7,15 @@
 #include "JokerManager.h"
 #include "FlatChipJoker.h"
 #include "PairJoker.h"
+#include "GameSession.h"
+#include "BlindState.h"
+
+class GameSession;
 
 class GameManager {
 public:
     GameManager();
-    void runSession();
+    void runSession(GameSession& session);
 
 private:
     HandGenerator handGenerator;

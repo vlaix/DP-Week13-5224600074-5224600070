@@ -8,9 +8,12 @@ GameManager::GameManager()
     jokerManager.addJoker(std::make_unique<FlatChipJoker>());
 }
 
-void GameManager::runSession()
+void GameManager::runSession(GameSession& gameSession)
 {
     std::cout << "=== Run Started ===\n";
+
+    auto activeBlind = gameSession.getCurrentBlind();
+    std::cout << "Memasuki: " << activeBlind->getBlindName() << "\n";
 
     Hand hand       = handGenerator.generateHand();
     Hand chosenhand = handPlayer.playHand(hand);
@@ -30,8 +33,16 @@ void GameManager::runSession()
     int finalScore = context.getFinalScore();
 
     bool win    = blindRule.checkBlind(finalScore);
-    int reward  = rewardRule.earnMoney(win, finalScore);
+    
+    if (win) {
+        int reward = activeBlind->getRewardMoney(); // Ambil uang dari state aktif
+        gameSession.addMoney(reward);
+        std::cout << "Money gained: " << reward << "\n";
 
-    std::cout << "Money gained: " << reward << "\n";
+        // State otomatis berubah di dalam session
+        activeBlind->handleNextState(gameSession); 
+    } else {
+        std::cout << "Game Over.\n";
+    }
     std::cout << "=== Run Ended ===\n";
 }
