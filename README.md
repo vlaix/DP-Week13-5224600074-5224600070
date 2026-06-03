@@ -69,7 +69,7 @@ Struct yang menyimpan kumpulan kartu sebagai vector. Digunakan di seluruh sistem
 
 ---
 
-## 🎲 Hand Generator
+## Hand Generator
 
 `HandGenerator` bertanggung jawab membuat deck lengkap, mengacaknya, dan memberikan 8 kartu kepada player.
 
