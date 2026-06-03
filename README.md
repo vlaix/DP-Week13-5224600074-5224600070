@@ -353,7 +353,7 @@ Wrapper yang membungkus `RewardCommand` dengan informasi timing:
 
 ---
 
-## 📐 Ringkasan Design Patterns
+## Ringkasan Design Patterns
 
 | Pattern | Digunakan Untuk | Keuntungan |
 |---|---|---|
