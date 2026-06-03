@@ -5,6 +5,8 @@
 #include "ScoringRule.h"
 #include "JokerManager.h"
 #include "BlindRule.h"
+#include "FlatChipJoker.h"
+#include "PairJoker.h"
 
 class GameManager {
 private:
@@ -19,6 +21,7 @@ private:
     void skipBlind(GameSession& gameSession);
     void handleDiscard(GameSession& gameSession, Hand& currentHand);
     void triggerRewards(GameSession& gameSession, RewardTiming currentTiming);
+    void Shop(GameSession& session);
 
 public:
     GameManager() = default;

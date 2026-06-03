@@ -93,6 +93,7 @@ void GameManager::runSession(GameSession& gameSession) {
         int reward = activeBlind->getRewardMoney(); 
         gameSession.addMoney(reward);
         std::cout << "Selamat! Babak dilewati. Uang didapat: $" << reward << "\n";
+        Shop(gameSession);
         activeBlind->handleNextState(gameSession); // State Pattern looping progresi berjalan otomatis
     } else {
         std::cout << "GAME OVER! Kuota bermain habis sebelum target skor tercapai.\n";
@@ -118,5 +119,28 @@ void GameManager::triggerRewards(GameSession& session, RewardTiming currentTimin
         } else {
             ++it;
         }
+    }
+}
+
+void GameManager::Shop(GameSession& session) {
+    std::cout << "=== SHOP MAMBU ===\n";
+    std::cout << "1. Pair Joker (2 Koin)\n";
+    std::cout << "2. Flat Chip Joker (2 Koin)\n";
+    std::cout << "3. Tidak Beli Joker\n";
+    std::cout << "Pilih Joker yang dibeli (1 atau 2): ";
+    int mambu;
+    std::cin >> mambu;
+    if (mambu == 3) {
+        return;
+    } else if (session.getMoney() > 2) {
+        if (mambu == 1) {
+            jokerManager.addJoker(std::make_unique<PairJoker>());
+            session.addMoney(-2);
+        } else if (mambu == 2) {
+            jokerManager.addJoker(std::make_unique<FlatChipJoker>());
+            session.addMoney(-2);
+        }
+    } else {
+        std::cout << "Uang Tidak Cukup\n";
     }
 }
